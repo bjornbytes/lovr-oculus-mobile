@@ -722,6 +722,7 @@ static ovrLayerProjection2 ovrRenderer_RenderFrame( ovrRenderer * renderer, cons
 		BridgeLovrDrawData drawData;
 		drawData.eye = eye;
 		drawData.framebuffer = frameBuffer->FrameBuffers[frameBuffer->TextureSwapChainIndex];
+		drawData.multiview = frameBuffer->UseMultiview;
 
 		bridgeLovrDraw(&drawData);
 
@@ -1324,9 +1325,6 @@ void android_main( struct android_app * app )
 
 	appState.UseMultiview &= ( glExtensions.multi_view &&
 							vrapi_GetSystemPropertyInt( &appState.Java, VRAPI_SYS_PROP_MULTIVIEW_AVAILABLE ) );
-
-	// FIXME FIXME FIXME FIXME This should be turned back on
-	appState.UseMultiview = false;
 
 	ALOGV( "AppState UseMultiview : %d", appState.UseMultiview );
 
