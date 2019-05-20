@@ -75,7 +75,7 @@ std::string ovr_GetPackageCodePath(JNIEnv * jni, jobject activityObject)
 
 extern "C" {
 
-#include "lovr/src/headset/oculus_mobile_bridge.h"
+#include "lovr/src/modules/headset/oculus_mobile_bridge.h"
 
 #define FILENAMESIZE 1024
 
