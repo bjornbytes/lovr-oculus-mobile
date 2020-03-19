@@ -1727,9 +1727,9 @@ void android_main( struct android_app * app )
 
 					model->nodes[i] = (ModelNode) {
 						.matrix = false,
-						.translation = { position->x, position->y, position->z },
-						.rotation = { orientation->x, orientation->y, orientation->z, orientation->w },
-						.scale = { 1.f, 1.f, 1.f },
+						.transform.properties.translation = { position->x, position->y, position->z },
+						.transform.properties.rotation = { orientation->x, orientation->y, orientation->z, orientation->w },
+						.transform.properties.scale = { 1.f, 1.f, 1.f },
 						.skin = ~0u
 					};
 
